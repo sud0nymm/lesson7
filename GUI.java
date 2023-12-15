@@ -62,6 +62,9 @@ public class GUI extends JFrame implements ActionListener{ //JFrame Needed for C
 		myRB2 = new JRadioButton();
 		myRB2.setText("Copy selected text");
 		myRB2.setFont(myFont);
+		// part of st 6 prolly
+		myRB1.addActionListener(this);
+		myRB2.addActionListener(this);
 		
 		//adding rb's to da panel
 		panel2 = new JPanel();
@@ -104,7 +107,6 @@ public class GUI extends JFrame implements ActionListener{ //JFrame Needed for C
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		//only this part gives a point, ez money
 		
-		
 	}
 	
 	// STEP FIVE, actionPerrformed method
@@ -132,17 +134,24 @@ public class GUI extends JFrame implements ActionListener{ //JFrame Needed for C
 			if (myRB2.isSelected()) {
 				
 				text2.setText(text1.getSelectedText());
-				
 			}
 			else if(myRB1.isSelected()) {
-			
 				text2.setText(text1.getText());
-				
 			}
-			
-			
-			
 		} 
+		
+		if (ae.getSource() == myRB2) {		
+			if (myRB2.isSelected()) {
+				myRB1.setSelected(false);
+			}
+		}
+		
+		if (ae.getSource() == myRB1) {
+			if(myRB1.isSelected()) {
+				myRB2.setSelected(false);
+			}
+		}
+		
 	
 	}
 	
