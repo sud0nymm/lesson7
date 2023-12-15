@@ -140,6 +140,7 @@ public class GUI extends JFrame implements ActionListener{ //JFrame Needed for C
 			}
 		} 
 		
+		// unselect and deselect depending on shitties'
 		if (ae.getSource() == myRB2) {		
 			if (myRB2.isSelected()) {
 				myRB1.setSelected(false);
@@ -152,7 +153,6 @@ public class GUI extends JFrame implements ActionListener{ //JFrame Needed for C
 			}
 		}
 		
-	
 	}
 	
 	
